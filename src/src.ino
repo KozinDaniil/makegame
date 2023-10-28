@@ -6,6 +6,7 @@ Interface inf;
 Button btn1, btn2, btn3;
 Cursor crs1;
 Shortcut iconSapper, iconGears;
+Dialogue dlg1;
 
 const uint8_t sapper_bits[] = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x01, 0x00, 
@@ -93,7 +94,10 @@ void drawScore()
 
 void gamePong()
 {
-    drawField(); drawRackets(); drawBall(); drawScore();
+    //drawField(); drawRackets(); drawBall(); drawScore();
+    joy.updatePositionXY();
+    crs1.cursor(true, joy.posX0, joy.posY0);
+    dlg1.dialogue(true, "wanna continue?", 8, 30, joy.posX0, joy.posY0);
 }
 
 void clickBtn1()

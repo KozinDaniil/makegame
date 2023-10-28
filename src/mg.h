@@ -150,7 +150,7 @@ public:
 class Dialogue
 {
     public:
-        bool dialogue(bool state, String text);
+        void dialogue(bool state, String text, uint8_t x, uint8_t y, uint8_t xx, uint8_t yy);
     private:
 };
 
